@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Для тебя — Жаным</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="particles">
+        <div class="spark"></div>
+        <div class="spark"></div>
+        <div class="spark"></div>
+        <div class="spark"></div>
+    </div>
+
+    <div class="stage" id="startStage">
+        <div class="start-card">
+            <div class="amethyst-gem"></div>
+            <button class="btn-main" onclick="showEnvelope()">Нажми, если тебе не лень</button>
+        </div>
+    </div>
+
+    <div class="stage hidden" id="envelopeStage">
+        <div class="envelope-wrapper" id="envelope" onclick="openEnvelope()">
+            <div class="envelope-back"></div>
+            <div class="envelope-flap"></div>
+            <div class="envelope-front"></div>
+            <div class="wax-seal">♥</div>
+        </div>
+        <div class="tap-hint">Нажми на сургучную печать, чтобы открыть письмо</div>
+    </div>
+
+    <div class="stage hidden" id="storyStage">
+        <div class="story-window">
+
+            <div class="scene-box" id="scene1">
+                <div class="letter-paper">
+                    <div class="letter-text">
+                        «Я люблю тебя и не перестану, пока ты не посмотришь на меня в будущем...»
+                    </div>
+                </div>
+            </div>
+
+            <div class="scene-box hidden" id="scene2">
+                <svg class="scene-svg" viewBox="0 0 380 210">
+                    <circle cx="65" cy="40" r="14" fill="#ffd166" opacity="0.85" />
+                    <circle cx="120" cy="30" r="1.5" fill="#fff" />
+                    <circle cx="260" cy="25" r="2" fill="#fff" />
+                    <circle cx="315" cy="50" r="1.5" fill="#fff" />
+                    <circle cx="40" cy="80" r="1.5" fill="#fff" />
+                    <g stroke="#ffd166" stroke-width="2.2" fill="none">
+                        <path d="M 190 22 L 185 65 L 172 120 L 145 178" />
+                        <path d="M 190 22 L 195 65 L 208 120 L 235 178" />
+                        <line x1="176" y1="95" x2="204" y2="95" />
+                        <line x1="163" y1="135" x2="217" y2="135" />
+                        <path d="M 168 178 Q 190 150 212 178" />
+                        <line x1="190" y1="12" x2="190" y2="22" />
+                    </g>
+                    <circle cx="190" cy="22" r="6" fill="#ffd166" opacity="0.7">
+                        <animate attributeName="r" values="4;11;4" dur="2s" repeatCount="indefinite" />
+                    </circle>
+                    <rect x="82" y="166" width="54" height="4" rx="2" fill="#d896ff" />
+                    <line x1="90" y1="170" x2="90" y2="180" stroke="#d896ff" stroke-width="3" />
+                    <line x1="128" y1="170" x2="128" y2="180" stroke="#d896ff" stroke-width="3" />
+                    <circle cx="101" cy="147" r="6" fill="#f8edff" />
+                    <path d="M 94 166 Q 101 153 108 166" fill="#f8edff" />
+                    <circle cx="115" cy="149" r="5.5" fill="#ff9ebb" />
+                    <path d="M 108 166 Q 115 154 122 166" fill="#ff9ebb" />
+                    <text x="104" y="135" fill="#ff4d94" font-size="13">♥
+                        <animate attributeName="y" values="137;127;137" dur="2.2s" repeatCount="indefinite" />
+                    </text>
+                </svg>
+                <div class="animated-caption">
+                    Это ты и я — каждый вечер, проведённый до конца жизни
+                </div>
+            </div>
+
+            <div class="scene-box hidden" id="scene3">
+                <svg class="scene-svg" viewBox="0 0 380 210">
+                    <path d="M 20 55 Q 80 35 140 60 T 240 50 Q 300 45 360 75 L 360 185 L 20 185 Z" fill="rgba(138, 43, 226, 0.18)" />
+                    <circle cx="75" cy="85" r="5" fill="#e0aaff" />
+                    <text x="52" y="73" fill="#e0aaff" font-size="11">Париж</text>
+                    <circle cx="305" cy="125" r="6" fill="#ffd166">
+                        <animate attributeName="r" values="5;9;5" dur="1.5s" repeatCount="indefinite" />
+                    </circle>
+                    <text x="285" y="146" fill="#ffd166" font-size="12" font-weight="bold">Мекка</text>
+                    <path class="route-line" d="M 75 85 Q 190 25 305 125" fill="none" stroke="#ffd166" stroke-width="2" stroke-dasharray="5,5" />
+                    <g class="plane-fly">
+                        <text x="-10" y="6" font-size="20" fill="#ffffff">✈</text>
+                    </g>
+                </svg>
+                <div class="animated-caption">
+                    А потом — нашим общим рейсом прямо в Мекку...
+                </div>
+            </div>
+
+            <div class="scene-box hidden" id="scene4">
+                <svg class="scene-svg" viewBox="0 0 380 210">
+                    <ellipse cx="190" cy="125" rx="145" ry="62" fill="#2d124d" stroke="#d896ff" stroke-width="1.5" />
+                    <ellipse cx="190" cy="125" rx="105" ry="44" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+                    <rect x="174" y="96" width="32" height="34" rx="2" fill="#0d0614" stroke="#ffd166" stroke-width="1.5" />
+                    <line x1="174" y1="106" x2="206" y2="106" stroke="#ffd166" stroke-width="2.5" />
+                    <g class="pilgrims-orbit">
+                        <circle cx="190" cy="68" r="4.5" fill="#ffffff" />
+                        <circle cx="199" cy="70" r="4.5" fill="#f8edff" />
+                        <circle cx="242" cy="115" r="3.5" fill="rgba(255,255,255,0.55)" />
+                        <circle cx="138" cy="120" r="3.5" fill="rgba(255,255,255,0.55)" />
+                        <circle cx="190" cy="162" r="3.5" fill="rgba(255,255,255,0.55)" />
+                    </g>
+                    <text x="182" y="34" fill="#ffd166" font-size="22">☪</text>
+                </svg>
+                <div class="animated-caption">
+                    Я сделаю всё, чтобы ты попала в Рай
+                </div>
+            </div>
+
+            <div class="scene-box hidden" id="scene5">
+                <svg class="beating-heart" viewBox="0 0 100 100">
+                    <defs>
+                        <linearGradient id="heartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#ff4d94" />
+                            <stop offset="50%" stop-color="#c9184a" />
+                            <stop offset="100%" stop-color="#7b2cbf" />
+                        </linearGradient>
+                    </defs>
+                    <path fill="url(#heartGrad)" d="M50 88 C50 88 10 62 10 34 C10 20 21 10 34 10 C42 10 48 15 50 21 C52 15 58 10 66 10 C79 10 90 20 90 34 C90 62 50 88 50 88 Z" />
+                </svg>
+                <div class="final-title">
+                    Я тебя люблю.<br>Спокойной ночи, жаным
+                </div>
+            </div>
+
+            <div class="progress-dots" id="dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <button class="next-btn" id="nextBtn" onclick="nextScene()">Дальше →</button>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
